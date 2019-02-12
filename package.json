@@ -1,0 +1,34 @@
+{
+  "name": "webapi-chat-solution",
+  "version": "1.0.0",
+  "description": "Guided project for **Web API II** Module",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LambdaSchool/webapi-chat-solution.git"
+  },
+  "keywords": [
+    "backend",
+    "guided",
+    "chat",
+    "lambda",
+    "api"
+  ],
+  "author": "Lambda School",
+  "bugs": {
+    "url": "https://github.com/LambdaSchool/webapi-chat-solution/issues"
+  },
+  "homepage": "https://github.com/LambdaSchool/webapi-chat-solution#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "knex": "^0.16.3",
+    "knex-cleaner": "^1.1.4",
+    "sqlite3": "^4.0.6"
+  }
+}
