@@ -10,10 +10,7 @@ module.exports = {
   update,
   findHubMessages,
   findMessageById,
-
   addMessage,
-  //   removeMessage,
-  //   updateMessage,
 };
 
 function find(query) {
@@ -71,11 +68,3 @@ async function addMessage(message) {
 
   return findMessageById(id);
 }
-
-// function removeMessage(id) {
-//   return null;
-// }
-
-// function updateMessage(id, changes) {
-//   return null;
-// }
