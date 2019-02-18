@@ -7,7 +7,6 @@ module.exports = {
     },
     pool: {
       afterCreate: (conn, done) => {
-        // funs after a connection is made to the sqlite engine
         conn.run('PRAGMA foreign_keys = ON', done);
       },
     },
