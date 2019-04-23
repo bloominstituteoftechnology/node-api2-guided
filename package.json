@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/LambdaSchool/webapi-chat-solution#readme",
   "devDependencies": {
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.11"
   },
   "dependencies": {
     "express": "^4.16.4",
-    "knex": "^0.16.3",
+    "knex": "^0.16.5",
     "knex-cleaner": "^1.1.4",
     "sqlite3": "^4.0.6"
   }
