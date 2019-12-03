@@ -1,6 +1,6 @@
-# Web API II Guided Project
+# Node API 2 Guided Project Starter Code
 
-Guided project for **Web API II** module.
+Guided project starter code for **Node API 2** module.
 
 In this project we will learn how to create a very simple Web API using `Node.js` and `Express`, and cover how to use `Express Routers` to break up the application to make it more maintainable.
 
