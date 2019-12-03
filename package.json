@@ -1,14 +1,14 @@
 {
-  "name": "webapi-ii-guided-project",
+  "name": "node-api2-guided",
   "version": "1.0.0",
-  "description": "Guided project for **Web API II** Module",
+  "description": "Guided project starter code for **Node API 2** Module",
   "main": "index.js",
   "scripts": {
     "server": "nodemon index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LambdaSchool/webapi-ii-guided.git"
+    "url": "git+https://github.com/LambdaSchool/node-api2-guided.git"
   },
   "keywords": [
     "backend",
@@ -19,15 +19,15 @@
   ],
   "author": "Lambda School",
   "bugs": {
-    "url": "https://github.com/LambdaSchool/webapi-ii-guided/issues"
+    "url": "https://github.com/LambdaSchool/node-api2-guided/issues"
   },
-  "homepage": "https://github.com/LambdaSchool/webapi-ii-guided#readme",
+  "homepage": "https://github.com/LambdaSchool/node-api2-guided#readme",
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "nodemon": "^2.0.1"
   },
   "dependencies": {
     "express": "^4.17.1",
-    "knex": "^0.18.3",
-    "sqlite3": "^4.0.9"
+    "knex": "^0.20.3",
+    "sqlite3": "^4.1.0"
   }
 }
