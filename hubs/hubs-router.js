@@ -34,6 +34,21 @@ router.get('/:id', (req, res) => {
   });
 });
 
+// new here
+router.get('/:id/messages', (req, res) => {
+  Hubs.findHubMessages(req.params.id)
+    .then(messages => {
+      if(messages.length > 0) {
+        res.status(200).json(messages);
+      } else {
+        res.status(404).json({message: 'not found'})
+      }
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    })
+})
+
 router.post('/', (req, res) => {
   Hubs.add(req.body)
   .then(hub => {
