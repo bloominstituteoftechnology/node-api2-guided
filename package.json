@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LambdaSchool/node-api2-guided.git"
+    "url": "git+https://github.com/vetorobert3/node-api2-guided.git"
   },
   "keywords": [
     "backend",
@@ -19,9 +19,9 @@
   ],
   "author": "Lambda School",
   "bugs": {
-    "url": "https://github.com/LambdaSchool/node-api2-guided/issues"
+    "url": "https://github.com/vetorobert3/node-api2-guided/issues"
   },
-  "homepage": "https://github.com/LambdaSchool/node-api2-guided#readme",
+  "homepage": "https://github.com/vetorobert3/node-api2-guided#readme",
   "devDependencies": {
     "nodemon": "^2.0.2"
   },
