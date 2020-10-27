@@ -1,9 +1,6 @@
 # Mac Files
 .DS_Store
 
-# Let developers use Yarn
-package-lock.json
-
 # Logs
 logs
 *.log
@@ -65,3 +62,6 @@ typings/
 
 # next.js build output
 .next
+
+# VSCode debug config
+launch.json
