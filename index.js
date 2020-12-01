@@ -109,7 +109,7 @@ server.put('/api/adopters/:id', (req, res) => {
 // DOGS ENDPOINTS
 // DOGS ENDPOINTS
 server.get('/api/dogs', (req, res) => {
-  Dog.find(req.query)
+  Dog.find()
     .then(dogs => {
       res.status(200).json(dogs);
     })
