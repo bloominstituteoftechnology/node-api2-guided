@@ -10,7 +10,7 @@ const Dog = require('./api/dogs/dogs-model');
 // ADOPTERS ENDPOINTS
 // ADOPTERS ENDPOINTS
 // ADOPTERS ENDPOINTS
-server.get('/', (req, res) => {
+server.get('/api/adopters', (req, res) => {
   Adopter.find(req.query)
     .then(adopters => {
       res.status(200).json(adopters);
@@ -23,7 +23,7 @@ server.get('/', (req, res) => {
     });
 });
 
-server.get('/:id', (req, res) => {
+server.get('/api/adopters/:id', (req, res) => {
   Adopter.findById(req.params.id)
     .then(adopter => {
       if (adopter) {
@@ -40,7 +40,7 @@ server.get('/:id', (req, res) => {
     });
 });
 
-server.get('/:id/dogs', (req, res) => {
+server.get('/api/adopters/:id/dogs', (req, res) => {
   Adopter.findDogs(req.params.id)
     .then(dogs => {
       if (dogs.length > 0) {
@@ -57,7 +57,7 @@ server.get('/:id/dogs', (req, res) => {
     });
 });
 
-server.post('/', (req, res) => {
+server.post('/api/adopters', (req, res) => {
   Adopter.add(req.body)
     .then(adopter => {
       res.status(201).json(adopter);
@@ -70,7 +70,7 @@ server.post('/', (req, res) => {
     });
 });
 
-server.delete('/:id', (req, res) => {
+server.delete('/api/adopters/:id', (req, res) => {
   Adopter.remove(req.params.id)
     .then(count => {
       if (count > 0) {
@@ -87,7 +87,7 @@ server.delete('/:id', (req, res) => {
     });
 });
 
-server.put('/:id', (req, res) => {
+server.put('/api/adopters/:id', (req, res) => {
   const changes = req.body;
   Adopter.update(req.params.id, changes)
     .then(adopter => {
@@ -108,7 +108,7 @@ server.put('/:id', (req, res) => {
 // DOGS ENDPOINTS
 // DOGS ENDPOINTS
 // DOGS ENDPOINTS
-server.get('/', (req, res) => {
+server.get('/api/dogs', (req, res) => {
   Dog.find(req.query)
     .then(dogs => {
       res.status(200).json(dogs);
