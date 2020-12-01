@@ -1,103 +1,135 @@
 const express = require('express');
 
-const Hubs = require('./hubs/hubs-model.js');
-
 const server = express();
 
 server.use(express.json());
 
+const Adopter = require('./api/adopters/adopters-model');
+const Dog = require('./api/dogs/dogs-model');
+
+// ADOPTERS ENDPOINTS
+// ADOPTERS ENDPOINTS
+// ADOPTERS ENDPOINTS
+server.get('/', (req, res) => {
+  Adopter.find(req.query)
+    .then(adopters => {
+      res.status(200).json(adopters);
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(500).json({
+        message: 'Error retrieving the adopters',
+      });
+    });
+});
+
+server.get('/:id', (req, res) => {
+  Adopter.findById(req.params.id)
+    .then(adopter => {
+      if (adopter) {
+        res.status(200).json(adopter);
+      } else {
+        res.status(404).json({ message: 'Adopter not found' });
+      }
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(500).json({
+        message: 'Error retrieving the adopter',
+      });
+    });
+});
+
+server.get('/:id/dogs', (req, res) => {
+  Adopter.findDogs(req.params.id)
+    .then(dogs => {
+      if (dogs.length > 0) {
+        res.status(200).json(dogs);
+      } else {
+        res.status(404).json({ message: 'No dogs for this adopter' });
+      }
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(500).json({
+        message: 'Error retrieving the dogs for this adopter',
+      });
+    });
+});
+
+server.post('/', (req, res) => {
+  Adopter.add(req.body)
+    .then(adopter => {
+      res.status(201).json(adopter);
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(500).json({
+        message: 'Error adding the adopter',
+      });
+    });
+});
+
+server.delete('/:id', (req, res) => {
+  Adopter.remove(req.params.id)
+    .then(count => {
+      if (count > 0) {
+        res.status(200).json({ message: 'The adopter has been nuked' });
+      } else {
+        res.status(404).json({ message: 'The adopter could not be found' });
+      }
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(500).json({
+        message: 'Error removing the adopter',
+      });
+    });
+});
+
+server.put('/:id', (req, res) => {
+  const changes = req.body;
+  Adopter.update(req.params.id, changes)
+    .then(adopter => {
+      if (adopter) {
+        res.status(200).json(adopter);
+      } else {
+        res.status(404).json({ message: 'The adopter could not be found' });
+      }
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(500).json({
+        message: 'Error updating the adopter',
+      });
+    });
+});
+
+// DOGS ENDPOINTS
+// DOGS ENDPOINTS
+// DOGS ENDPOINTS
+server.get('/', (req, res) => {
+  Dog.find(req.query)
+    .then(dogs => {
+      res.status(200).json(dogs);
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(500).json({
+        message: 'Error retrieving the dogs',
+      });
+    });
+});
+
+// OTHER ENDPOINTS
+// OTHER ENDPOINTS
+// OTHER ENDPOINTS
 server.get('/', (req, res) => {
   res.send(`
-    <h2>Lambda Hubs API</h>
-    <p>Welcome to the Lambda Hubs API</p>
+    <h2>Lambda Shelter API</h>
+    <p>Welcome to the Lambda Shelter API</p>
   `);
 });
-
-server.get('/api/hubs', (req, res) => {
-  Hubs.find(req.query)
-  .then(hubs => {
-    res.status(200).json(hubs);
-  })
-  .catch(error => {
-    // log error to database
-    console.log(error);
-    res.status(500).json({
-      message: 'Error retrieving the hubs',
-    });
-  });
-});
-
-server.get('/api/hubs/:id', (req, res) => {
-  Hubs.findById(req.params.id)
-  .then(hub => {
-    if (hub) {
-      res.status(200).json(hub);
-    } else {
-      res.status(404).json({ message: 'Hub not found' });
-    }
-  })
-  .catch(error => {
-    // log error to database
-    console.log(error);
-    res.status(500).json({
-      message: 'Error retrieving the hub',
-    });
-  });
-});
-
-server.post('/api/hubs', (req, res) => {
-  Hubs.add(req.body)
-  .then(hub => {
-    res.status(201).json(hub);
-  })
-  .catch(error => {
-    // log error to database
-    console.log(error);
-    res.status(500).json({
-      message: 'Error adding the hub',
-    });
-  });
-});
-
-server.delete('/api/hubs/:id', (req, res) => {
-  Hubs.remove(req.params.id)
-  .then(count => {
-    if (count > 0) {
-      res.status(200).json({ message: 'The hub has been nuked' });
-    } else {
-      res.status(404).json({ message: 'The hub could not be found' });
-    }
-  })
-  .catch(error => {
-    // log error to database
-    console.log(error);
-    res.status(500).json({
-      message: 'Error removing the hub',
-    });
-  });
-});
-
-server.put('/api/hubs/:id', (req, res) => {
-  const changes = req.body;
-  Hubs.update(req.params.id, changes)
-  .then(hub => {
-    if (hub) {
-      res.status(200).json(hub);
-    } else {
-      res.status(404).json({ message: 'The hub could not be found' });
-    }
-  })
-  .catch(error => {
-    // log error to database
-    console.log(error);
-    res.status(500).json({
-      message: 'Error updating the hub',
-    });
-  });
-});
-
-// add an endpoint that returns all the messages for a hub
-// add an endpoint for adding new message to a hub
 
 server.listen(4000, () => {
   console.log('\n*** Server Running on http://localhost:4000 ***\n');
