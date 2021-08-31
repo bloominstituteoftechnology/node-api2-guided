@@ -1,27 +1,27 @@
 exports.seed = function (knex) {
   return knex('dogs').insert([
     {
-      name: 'Fido',
+      name: 'fido',
       weight: 25,
       adopter_id: 1,
     },
     {
-      name: 'Captain',
+      name: 'buddy',
       weight: 15,
       adopter_id: 1,
     },
     {
-      name: 'Lucy',
+      name: 'odin',
       weight: 18,
       adopter_id: 2,
     },
     {
-      name: 'Aragorn',
+      name: 'chip',
       weight: 35,
       adopter_id: null,
     },
     {
-      name: 'Princess',
+      name: 'peanut',
       weight: 25,
       adopter_id: null,
     },
