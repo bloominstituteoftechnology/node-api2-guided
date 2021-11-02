@@ -129,8 +129,8 @@ server.get('/api/dogs', (req, res) => {
 // OTHER ENDPOINTS
 server.get('/', (req, res) => {
   res.send(`
-    <h2>Lambda Shelter API</h>
-    <p>Welcome to the Lambda Shelter API</p>
+    <h2>Shelter API</h>
+    <p>Welcome to the Shelter API</p>
   `);
 });
 
