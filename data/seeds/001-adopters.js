@@ -1,9 +1,9 @@
 exports.seed = function(knex) {
   return knex('adopters').insert([
-    { name: 'ashley', email: 'ashley@ashley.com' },
-    { name: 'anwar', email: 'anwar@anwar.com' },
-    { name: 'chudi', email: 'chudi@chudi.com' },
-    { name: 'dom', email: 'dom@dom.com' },
-    { name: 'jie', email: 'jie@jie.com' },
+    { name: 'Katherine', email: 'kat@bloomtech.com' },
+    { name: 'Felipe', email: 'felipe@bloomtech.com' },
+    { name: 'Wailon', email: 'wailon@bloomtech.com' },
+    { name: 'Raj', email: 'raj@bloomtech.com' },
+    { name: 'Priscila', email: 'priscila@bloomtech.com' },
   ]);
 }
