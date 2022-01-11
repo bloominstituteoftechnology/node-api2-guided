@@ -13,12 +13,12 @@
         "url": "git+https://github.com/BloomInstituteOfTechnology/node-api2-guided.git"
     },
     "devDependencies": {
-        "eslint": "^8.3.0",
+        "eslint": "^8.6.0",
         "nodemon": "^2.0.15"
     },
     "dependencies": {
-        "express": "^4.17.1",
-        "knex": "^0.95.14",
+        "express": "^4.17.2",
+        "knex": "^0.95.15",
         "sqlite3": "^5.0.2"
     }
 }
