@@ -16,10 +16,10 @@ In this project we will learn how to create a very simple Web API using `Node.js
 
 Please follow along as the instructor builds the API step by step:
 
-| Not using REST      | Using REST                |
-| ------------------- | --------------------------|
-| `/listAllAdopters`  | GET    /adopters          |
-| `/createAdopter`    | POST   /adopters          |
-| `/updateAdopter`    | PUT    /adopters/:id      |
-| `/deleteAdopter`    | DELETE /adopters/:id      |
-| `/listAdopterDogs`  | GET    /adopters/:id/dogs |
+| Not using REST                               | Using REST                                       |
+| -------------------------------------------- | ------------------------------------------------ |
+| POST `http://localhost:9000/listAllAdopters` | GET    `http://localhost:9000/adopters`          |
+| POST `http://localhost:9000/createAdopter`   | POST   `http://localhost:9000/adopters`          |
+| POST `http://localhost:9000/updateAdopter`   | PUT    `http://localhost:9000/adopters/:id`      |
+| POST `http://localhost:9000/deleteAdopter`   | DELETE `http://localhost:9000/adopters/:id`      |
+| POST `http://localhost:9000/listAdopterDogs` | GET    `http://localhost:9000/adopters/:id/dogs` |
