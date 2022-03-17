@@ -20,9 +20,7 @@ server.get('/api/adopters', (req, res) => {
     })
     .catch(error => {
       console.log(error);
-      res.status(500).json({
-        message: 'Error retrieving the adopters',
-      });
+      res.status(500).json({ message: 'Error retrieving the adopters' });
     });
 });
 
@@ -37,9 +35,7 @@ server.get('/api/adopters/:id', (req, res) => {
     })
     .catch(error => {
       console.log(error);
-      res.status(500).json({
-        message: 'Error retrieving the adopter',
-      });
+      res.status(500).json({ message: 'Error retrieving the adopter' });
     });
 });
 
@@ -54,9 +50,7 @@ server.get('/api/adopters/:id/dogs', (req, res) => {
     })
     .catch(error => {
       console.log(error);
-      res.status(500).json({
-        message: 'Error retrieving the dogs for this adopter',
-      });
+      res.status(500).json({ message: 'Error retrieving the dogs for this adopter' });
     });
 });
 
@@ -67,9 +61,7 @@ server.post('/api/adopters', (req, res) => {
     })
     .catch(error => {
       console.log(error);
-      res.status(500).json({
-        message: 'Error adding the adopter',
-      });
+      res.status(500).json({ message: 'Error adding the adopter' });
     });
 });
 
@@ -84,9 +76,7 @@ server.delete('/api/adopters/:id', (req, res) => {
     })
     .catch(error => {
       console.log(error);
-      res.status(500).json({
-        message: 'Error removing the adopter',
-      });
+      res.status(500).json({ message: 'Error removing the adopter' });
     });
 });
 
@@ -102,9 +92,7 @@ server.put('/api/adopters/:id', (req, res) => {
     })
     .catch(error => {
       console.log(error);
-      res.status(500).json({
-        message: 'Error updating the adopter',
-      });
+      res.status(500).json({ message: 'Error updating the adopter' });
     });
 });
 
@@ -118,9 +106,7 @@ server.get('/api/dogs', (req, res) => {
     })
     .catch(error => {
       console.log(error);
-      res.status(500).json({
-        message: 'Error retrieving the dogs',
-      });
+      res.status(500).json({ message: 'Error retrieving the dogs' });
     });
 });
 
