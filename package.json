@@ -17,8 +17,8 @@
     "nodemon": "^2.0.15"
   },
   "dependencies": {
-    "@vscode/sqlite3": "5.0.7",
     "express": "^4.17.3",
-    "knex": "^1.0.4"
+    "knex": "^2.0.0",
+    "sqlite3": "^5.0.8"
   }
 }
