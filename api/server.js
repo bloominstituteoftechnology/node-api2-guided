@@ -37,6 +37,12 @@ const Dog = require('./dogs/dogs-model');
 // /asdf/my/new/endpoint
 // /asdf/my/2nd/endpoint
 
+
+
+// ADOPTERS ENDPOINTS
+// ADOPTERS ENDPOINTS
+// ADOPTERS ENDPOINTS
+
 const adoptersRouter = require('./adopters/adopters-router');
 server.use('/api/adopters', adoptersRouter);
 
