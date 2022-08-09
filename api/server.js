@@ -10,39 +10,6 @@ server.use(express.json());
 const Dog = require('./dogs/dogs-model');
 
 
-// const router = express.Router();
-
-// router.get('/my/new/endpoint', (req, res) => {
-//   res.json({ data: 42, description: 'life the universe and everything' });
-// });
-
-// router.get('/my/2nd/endpoint', (req, res) => {
-//   res.json({ data: 43, description: 'just some number' });
-// });
-
-// const router2 = express.Router();
-// router2.get('/xyz', (req, res) => {
-//   res.send('xyz');
-// });
-
-// router.use('/abc', router2);
-
-// router.use('/self', router);
-
-
-
-// server.use('/qqq', router);
-
-// server.use('/asdf', router);
-// /asdf/my/new/endpoint
-// /asdf/my/2nd/endpoint
-
-
-
-// ADOPTERS ENDPOINTS
-// ADOPTERS ENDPOINTS
-// ADOPTERS ENDPOINTS
-
 const adoptersRouter = require('./adopters/adopters-router');
 server.use('/api/adopters', adoptersRouter);
 
@@ -71,3 +38,34 @@ server.get('/', (req, res) => {
 });
 
 module.exports = server;
+
+
+
+
+
+// const router = express.Router();
+
+// router.get('/my/new/endpoint', (req, res) => {
+//   res.json({ data: 42, description: 'life the universe and everything' });
+// });
+
+// router.get('/my/2nd/endpoint', (req, res) => {
+//   res.json({ data: 43, description: 'just some number' });
+// });
+
+// const router2 = express.Router();
+// router2.get('/xyz', (req, res) => {
+//   res.send('xyz');
+// });
+
+// router.use('/abc', router2);
+
+// router.use('/self', router);
+
+
+
+// server.use('/qqq', router);
+
+// server.use('/asdf', router);
+// /asdf/my/new/endpoint
+// /asdf/my/2nd/endpoint
