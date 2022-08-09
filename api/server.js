@@ -10,6 +10,7 @@ server.use(express.json());
 const Adopter = require('./adopters/adopters-model');
 const Dog = require('./dogs/dogs-model');
 
+
 const router = express.Router();
 
 router.get('/my/new/endpoint', (req, res) => {
@@ -19,6 +20,10 @@ router.get('/my/new/endpoint', (req, res) => {
 router.get('/my/2nd/endpoint', (req, res) => {
   res.json({ data: 43, description: 'just some number' });
 });
+
+
+
+server.use('/qqq', router);
 
 server.use('/asdf', router);
 // /asdf/my/new/endpoint
