@@ -10,6 +10,12 @@ server.use(express.json());
 const Adopter = require('./adopters/adopters-model');
 const Dog = require('./dogs/dogs-model');
 
+const router = express.Router();
+
+router.get('/my/new/endpoint', (req, res) => {
+  res.json({ data: 42, description: 'life the universe and everything' });
+})
+
 // ADOPTERS ENDPOINTS
 // ADOPTERS ENDPOINTS
 // ADOPTERS ENDPOINTS
