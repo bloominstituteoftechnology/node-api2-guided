@@ -32,16 +32,21 @@ const Dog = require('./dogs/dogs-model');
 
 
 
-server.use('/qqq', router);
+// server.use('/qqq', router);
 
-server.use('/asdf', router);
+// server.use('/asdf', router);
 // /asdf/my/new/endpoint
 // /asdf/my/2nd/endpoint
 
+
+
 // ADOPTERS ENDPOINTS
 // ADOPTERS ENDPOINTS
 // ADOPTERS ENDPOINTS
-server.get('/api/adopters', (req, res) => {
+
+const adoptersRouter = express.Router();
+
+adoptersRouter.get('/', (req, res) => {
   Adopter.find(req.query)
     .then(adopters => {
       res.status(200).json(adopters);
@@ -52,7 +57,7 @@ server.get('/api/adopters', (req, res) => {
     });
 });
 
-server.get('/api/adopters/:id', (req, res) => {
+adoptersRouter.get('/:id', (req, res) => {
   Adopter.findById(req.params.id)
     .then(adopter => {
       if (adopter) {
@@ -67,7 +72,7 @@ server.get('/api/adopters/:id', (req, res) => {
     });
 });
 
-server.get('/api/adopters/:id/dogs', (req, res) => {
+adoptersRouter.get('/:id/dogs', (req, res) => {
   Adopter.findDogs(req.params.id)
     .then(dogs => {
       if (dogs.length > 0) {
@@ -82,7 +87,7 @@ server.get('/api/adopters/:id/dogs', (req, res) => {
     });
 });
 
-server.post('/api/adopters', (req, res) => {
+adoptersRouter.post('/', (req, res) => {
   Adopter.add(req.body)
     .then(adopter => {
       res.status(201).json(adopter);
@@ -93,7 +98,7 @@ server.post('/api/adopters', (req, res) => {
     });
 });
 
-server.delete('/api/adopters/:id', (req, res) => {
+adoptersRouter.delete('/:id', (req, res) => {
   Adopter.remove(req.params.id)
     .then(count => {
       if (count > 0) {
@@ -108,7 +113,7 @@ server.delete('/api/adopters/:id', (req, res) => {
     });
 });
 
-server.put('/api/adopters/:id', (req, res) => {
+adoptersRouter.put('/:id', (req, res) => {
   const changes = req.body;
   Adopter.update(req.params.id, changes)
     .then(adopter => {
@@ -123,6 +128,8 @@ server.put('/api/adopters/:id', (req, res) => {
       res.status(500).json({ message: 'Error updating the adopter' });
     });
 });
+
+server.use('/api/adopters', adoptersRouter);
 
 // DOGS ENDPOINTS
 // DOGS ENDPOINTS
