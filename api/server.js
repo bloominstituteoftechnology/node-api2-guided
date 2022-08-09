@@ -16,6 +16,8 @@ router.get('/my/new/endpoint', (req, res) => {
   res.json({ data: 42, description: 'life the universe and everything' });
 })
 
+server.use('/asdf', router);
+
 // ADOPTERS ENDPOINTS
 // ADOPTERS ENDPOINTS
 // ADOPTERS ENDPOINTS
