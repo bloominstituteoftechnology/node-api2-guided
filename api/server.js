@@ -28,6 +28,8 @@ router2.get('/xyz', (req, res) => {
 
 router.use('/abc', router2);
 
+router.use('/self', router);
+
 
 
 server.use('/qqq', router);
