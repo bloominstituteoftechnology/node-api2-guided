@@ -5,13 +5,13 @@ const express = require('express');
 
 const server = express();
 
-
+server.use(express.json());
 
 const Dog = require('./dogs/dogs-model');
 
 const adoptersRouter = require('./adopters/adopters-router');
 server.use('/api/adopters', adoptersRouter);
-server.use(express.json());
+
 // DOGS ENDPOINTS
 // DOGS ENDPOINTS
 // DOGS ENDPOINTS
