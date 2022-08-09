@@ -21,6 +21,13 @@ router.get('/my/2nd/endpoint', (req, res) => {
   res.json({ data: 43, description: 'just some number' });
 });
 
+const router2 = express.Router();
+router2.get('/xyz', (req, res) => {
+  res.send('xyz');
+});
+
+router.use('/abc', router2);
+
 
 
 server.use('/qqq', router);
