@@ -4,6 +4,7 @@ const Adopter = require('./adopters-model');
 const router = express.Router();
 
 router.get('/', (req, res) => {
+  console.log(req);
   Adopter.find(req.query)
     .then(adopters => {
       res.status(200).json(adopters);
