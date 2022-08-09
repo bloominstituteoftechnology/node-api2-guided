@@ -49,9 +49,11 @@ router.post('/', (req, res) => {
 
   if(name == null || email == null) {
     res.status(400).json({ message: 'name and email required' });
+    return;
   }
   if((typeof email) != 'string') {
     res.status(400).json({ message: 'invalid email' });
+    return;
   }
 
   Adopter.add({ name, email })
