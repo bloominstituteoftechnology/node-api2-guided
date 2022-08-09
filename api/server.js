@@ -16,6 +16,10 @@ server.use('/api/adopters', adoptersRouter);
 // DOGS ENDPOINTS
 // DOGS ENDPOINTS
 server.get('/api/dogs', (req, res) => {
+  
+  console.log(req.query);
+
+
   Dog.find()
     .then(dogs => {
       res.status(200).json(dogs);
