@@ -11,24 +11,24 @@ const Adopter = require('./adopters/adopters-model');
 const Dog = require('./dogs/dogs-model');
 
 
-const router = express.Router();
+// const router = express.Router();
 
-router.get('/my/new/endpoint', (req, res) => {
-  res.json({ data: 42, description: 'life the universe and everything' });
-});
+// router.get('/my/new/endpoint', (req, res) => {
+//   res.json({ data: 42, description: 'life the universe and everything' });
+// });
 
-router.get('/my/2nd/endpoint', (req, res) => {
-  res.json({ data: 43, description: 'just some number' });
-});
+// router.get('/my/2nd/endpoint', (req, res) => {
+//   res.json({ data: 43, description: 'just some number' });
+// });
 
-const router2 = express.Router();
-router2.get('/xyz', (req, res) => {
-  res.send('xyz');
-});
+// const router2 = express.Router();
+// router2.get('/xyz', (req, res) => {
+//   res.send('xyz');
+// });
 
-router.use('/abc', router2);
+// router.use('/abc', router2);
 
-router.use('/self', router);
+// router.use('/self', router);
 
 
 
