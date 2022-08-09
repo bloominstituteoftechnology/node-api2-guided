@@ -14,9 +14,15 @@ const router = express.Router();
 
 router.get('/my/new/endpoint', (req, res) => {
   res.json({ data: 42, description: 'life the universe and everything' });
-})
+});
+
+router.get('/my/2nd/endpoint', (req, res) => {
+  res.json({ data: 43, description: 'just some number' });
+});
 
 server.use('/asdf', router);
+// /asdf/my/new/endpoint
+// /asdf/my/2nd/endpoint
 
 // ADOPTERS ENDPOINTS
 // ADOPTERS ENDPOINTS
