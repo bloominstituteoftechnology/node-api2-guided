@@ -45,7 +45,13 @@ router.get('/:id/dogs', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  Adopter.add(req.body)
+  let { name, email } = req.body;
+
+  if(name == null || email == null) {
+    res.status(400).json({ message: 'name and email required' });
+  }
+
+  Adopter.add({ name, email })
     .then(adopter => {
       res.status(201).json(adopter);
     })
